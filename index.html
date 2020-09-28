@@ -199,6 +199,17 @@
       return (mins * 60) + secs;
     })
     .reduce((total, vidSeconds) => total + vidSeconds);
+
+    let secondsLeft = seconds;
+    const hours = Math.floor(secondsLeft / 3600);
+    // We use mod here to get the remainder of seconds after hours are calculated
+    secondsLeft = secondsLeft % 3600;
+
+    const mins = Math.floor(secondsLeft / 60);
+    secondsLeft = secondsLeft % 60;
+
+    console.log(`${hours} hours ${mins} minutes and ${secondsLeft} seconds`);
+
 </script>
 </body>
 </html>
